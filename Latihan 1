@@ -1,0 +1,34 @@
+paku1 = ["b1", "b2", "b3"]
+paku2 = []
+paku3 = []
+
+
+def push(paku, dibawa):
+    paku.append(dibawa)
+def isEmpty(paku):
+    if len(paku) == 0:
+        return True
+    else:
+        return False
+def pop(paku):
+    if isEmpty(paku):
+        return None
+    else:
+        return paku.pop()
+def printPaku():
+    print(paku1)
+    print(paku2)
+    print(paku3)
+    
+dibawa = pop(paku1)
+push(paku2, dibawa)
+
+dibawa = pop(paku1)
+push(paku2, dibawa)
+
+dibawa = pop(paku1)
+push(paku2, dibawa)
+
+paku2.reverse()    
+
+printPaku()
