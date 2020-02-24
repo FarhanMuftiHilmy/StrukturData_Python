@@ -1,0 +1,34 @@
+def createNewStack():
+    return []
+def push(StackApa, elemen):
+    StackApa.append(elemen)
+def isEmpty(StackApa):
+    if len(StackApa) == 0:
+        return True
+    else:
+        return False
+def pop(StackApa):
+    if isEmpty(StackApa):
+        return None
+    else:
+        return StackApa.pop()
+def clear(StackApa):
+    StackApa.clear()
+def peek(StackApa):
+    if len(StackApa) == 0:
+        return None
+    else:
+        return StackApa[len(StackApa) - 1]
+def printStack(StackApa):
+    print(StackApa)        
+# buat stack list yang berisikan [3, 2, 5]
+S = createNewStack()
+push(S, 3)
+push(S, 2)
+push(S, 5)
+push(S, 6)
+pop(S)
+printStack(S)
+clear(S)
+printStack(S)
+peek(S)
