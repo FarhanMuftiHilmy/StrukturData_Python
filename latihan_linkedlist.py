@@ -133,6 +133,8 @@ class LinkedList:
         dataNext = p.getNext()
         p.setNext(newNode)
         p.getNext().setNext(dataNext)
+        
+    #nomor 4
     def deleteNode(self, data):
         prev = None
         p = self.head
@@ -155,25 +157,34 @@ class LinkedList:
             print(p.data)
             p = p.getNext()
         
-
+print("---Masukkan data dan print semua data-----")
 LL = LinkedList()
-LL.insertFirst('farhan')
-LL.insertFirst('hilmy')
-LL.insertFirst('Kemal')
-LL.insertFirst('Thaha')
+LL.insertFirst('nama1')
+LL.insertFirst('nama2')
+LL.insertFirst('nama3')
+LL.insertFirst('nama4')
 LL.printAll()
+
 print("---Count Node-----")
 print(LL.countNode())
-print("---Cek Data : Kemal-----")
-print(LL.cekData('Kemal'))
-print("---Cari Data : hilmy-----")
-print(LL.cariData('hilmy'))
-print("---Sisipkan data Mufti setelah Thaha-----")
-LL.sisip('Thaha','Mufti')
+
+
+print("---Cek Data-----")
+print(LL.cekData('nama3'))
+
+
+print("---Cari Data-----")
+print("Data urutan ke -", LL.cariData('nama2'))
+
+
+print("---Sisipkan data nama sisipan setelah nama3-----")
+LL.sisip('nama4','nama-sisipan')
 
 LL.printAll()
-print("----------")
-LL.deleteNode('Mufti')
+print("---Menghapus node tertentu-----")
+LL.deleteNode('nama-sisipan')
+LL.deleteNode('nama1')
+
 LL.printAll()
 
 
