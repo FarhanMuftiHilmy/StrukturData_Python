@@ -54,7 +54,7 @@ def deleteNode(root, dkey):
 		root.right = deleteNode(root.right,root.key)
 	return root
 
-# A utility function to do inorder traversal of BST 
+# A utility function to do preorder traversal of BST 
 # Root -> Left ->Right
 def printPreorder(root): 
     if root is not None: 
