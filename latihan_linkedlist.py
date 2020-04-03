@@ -19,10 +19,11 @@ Buatlah method:
 
 
 class Node:
+    #Constructor
     def __init__(self, data):
         self.data = data;
-        self.next = None;
-        
+        self.next = None;       
+    #SetterGetter
     def getData(self):  
         return self.data
     def getNext(self):
@@ -33,6 +34,7 @@ class Node:
         self.data = newData
 
 class LinkedList:
+    #Constructor
     def __init__(self):
         self.head = None;
     def isEmpty(self):
@@ -42,7 +44,9 @@ class LinkedList:
             return False
     def insertFirst(self, data):
          nodeBaru = Node(data)
+         #Set self.head jadi self.next nodeBaru dulu
          nodeBaru.setNext(self.head)
+         #Setelah itu, baru nodeBaru dijadikan self.head 
          self.head = nodeBaru
         
 #==============================================================================
@@ -135,20 +139,33 @@ class LinkedList:
         p.getNext().setNext(dataNext)
         
     #nomor 4
-    def deleteNode(self, data):
-        prev = None
-        p = self.head
-        while p:
-            if p.getData() == data:
-                if prev:
-                    prev.setNext(p.getNext())
-                else:
-                    self.head = p.getNext()
-                    return True
-            prev = p
-            p = p.getNext()
-            
-        return False
+    def deleteNode(self, key):
+        # Store head node  
+        temp = self.head  
+  
+        # If head node itself holds the key to be deleted  
+        if (temp is not None):  
+            if (temp.data == key):  
+                self.head = temp.next
+                temp = None
+                return # same with break
+  
+        # Search for the key to be deleted, keep track of the  
+        # previous node as we need to change 'prev.next'  
+        while(temp is not None):  
+            if temp.data == key:  
+                break
+            prev = temp  
+            temp = temp.next
+  
+        # if key was not present in linked list  
+        if(temp == None):  
+            return
+  
+        # Unlink the node from linked list  
+        prev.next = temp.next
+  
+        temp = None
     
     def printAll(self):
         p = self.head
